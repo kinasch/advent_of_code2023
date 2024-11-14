@@ -21,4 +21,16 @@ while cur_key != "ZZZ":
     cur_key = nodes[cur_key][commands[counter%amount_of_commands]]
     counter = (counter+1)
 
-print(counter)
+print("1st star:",counter)
+
+# 2nd key
+cur_key = [x for x in nodes.keys() if x[2] == "A"]
+counter = 0
+amount_of_commands = len(commands)
+while True:
+    if False not in [x[2] == "Z" for x in cur_key]:
+        break
+    cur_key = [ nodes[y][commands[counter%amount_of_commands]] for y in cur_key ]
+    counter = (counter+1)
+
+print("2nd star:",counter)
